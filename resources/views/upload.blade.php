@@ -1,57 +1,56 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Laravel 5.3 Amazon S3 Image Upload with Validation example</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-</head>
-<body>
+@extends('layouts.app')
 
-<div class="container">
-    <div class="panel panel-primary">
-        <div class="panel-heading"><h2>Laravel 5.3 Amazon S3 Image Upload with Validation example</h2></div>
+@section('content')
 
-        <div class="panel-body">
+    <div class="container uploadbox-wrapper">
+        <div class="row">
 
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
+            <div class="container uploadbox">
+                <div class="row rowub1 align-middle align-self-center">
+
+                    <button class="btn btn-lg align-middle  btnupld btn-outline-success my-2 my-sm-0 mx-auto align-self-center" type="button" onclick="window.location='{{ route('upload-file') }}'">Upload</button>
                 </div>
-            @endif
+                <div class="row rowub2">
+                    <div class="col-sm-7 mx-auto text-center font-italic">
+                        Supported file types: pdf, txt, doc, ppt, xls, docx, and more
 
-            @if ($message = Session::get('success'))
-                <div class="alert alert-success alert-block">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    <strong>{{ $message }}</strong>
+
+                    </div>
+
                 </div>
-                <img src="{{ Session::get('path') }}">
-            @endif
 
-            <form action="{{ url('upload') }}" enctype="multipart/form-data" method="POST">
-                {{ csrf_field() }}
-                <div class="row">
-                    <div class="col-md-12">
-                        <input type="file" name="image" />
+                <div class="row rowub2">
+                    <div class="col center-block text-center">
+                        <span class="fa-stack fa-2x">
+                             <i class="fa fa-circle-thin fa-stack-2x"></i>
+                             <i class="fa fa-upload fa-stack-1x"></i>
+                        </span>
+                        <p>Upload swiftly</p>
                     </div>
-                    <div class="col-md-12">
-                        <input type="file" name="text_file" />
+                    <div class="col center-block text-center">
+                       <span class="fa-stack fa-2x">
+                             <i class="fa fa-circle-thin fa-stack-2x"></i>
+                             <i class="fa fa-users fa-stack-1x"></i>
+                        </span>
+                        <p>Contribute to the community</p>
                     </div>
-                    <div class="col-md-12">
-                        <button type="submit" class="btn btn-success">Upload</button>
+                    <div class="col center-block text-center">
+                    <span class="fa-stack fa-2x">
+                             <i class="fa fa-circle-thin fa-stack-2x"></i>
+                             <i class="fa fa-heart-o fa-stack-1x"></i>
+                        </span>
+                        <p>Earn download points</p>
                     </div>
+
                 </div>
-            </form>
-
+            </div>
 
 
         </div>
-
     </div>
-</div>
 
-</body>
-</html>
+@endsection
+
+
+
+

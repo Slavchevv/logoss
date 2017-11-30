@@ -8,27 +8,28 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-
-
-//Route::get('upload', function () {
-    /*echo 123;
-    $s3 = Storage::disk('s3');
-    $s3->put('myfile.txt','my file!','public');*/
- //   return view('upload');
-//});
-
-Route::get('/upload','UploadController@imageUpload');
-Route::post('/upload','UploadController@imageUploadPost');
 Route::get('/upload', function () {
     return view('upload');
 });
+Route::get('/upload-file', function () {
+    return view('upload-file');
+});
+
+
 
 Route::post('/contact/submit', 'MessagesController@submit');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
+Route::get('/upload','UploadController@index')->name('upload');
+Auth::routes();
+Route::get('/upload-file','UploadController@imageUpload')->name('upload-file');
+Auth::routes();
+Route::post('/upload-file','UploadController@imageUploadPost')->name('upload-file');;
 
 /*Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 

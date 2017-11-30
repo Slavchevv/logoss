@@ -6,17 +6,24 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+        {{--    <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>--}}
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Discover <i class="fa fa-compass" aria-hidden="true"></i></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+            @if (!(Auth::guest()))
+            <li class="nav-item active">
+                <a class="nav-link" onclick="window.location='{{ URL::route('upload') }}'">Saved <i class="fa fa-bookmark-o" aria-hidden="true"></i></a>
             </li>
-            <li class="nav-item">
+            @endif
+            <li class="nav-item active">
                 @if (Auth::guest())
                 <a class="nav-link disabled" href="#">Upload <i class="fa fa-cloud-upload align-middle" aria-hidden="true"></i></a>
                 @else
                 <a class="nav-link" onclick="window.location='{{ URL::route('upload') }}'">Upload <i class="fa fa-cloud-upload align-middle" aria-hidden="true" ></i></a>
+
+
                 @endif
             </li>
             <li>
@@ -38,9 +45,9 @@
                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="#">Points</a>
+                            <a class="dropdown-item" href="#">Help</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" onclick="window.location='{{ route('logout') }}'">Log out</a>
                             {{--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
