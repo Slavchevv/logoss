@@ -31,6 +31,9 @@ Route::post('/upload-file','UploadController@imageUploadPost')->name('upload-fil
 Auth::routes();
 Route::get('/uploads','UploadController@uploads')->name('uploads');
 Auth::routes();
+Route::get('/uploads/{upload}','UploadController@show')->name('uploads.show');
+
+
 /*Auth::routes();
 
 

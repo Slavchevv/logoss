@@ -6,8 +6,10 @@
     <div class="well">
         <h3><a href="/uploads/{{$upload->id}}">{{$upload->name}}</a> </h3>
         <small>Written on {{$upload->created_at}}</small>
+
     </div>
         @endforeach
+             {{$uploads->links()}}
     @else
     <p>No uploads found</p>
     @endif
