@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Storage;
+use App\Upload;
 class UploadController extends Controller
 {
 
@@ -13,6 +14,13 @@ class UploadController extends Controller
         return view('upload');
     }
 
+    public function uploads()
+    {
+        //return Upload::all();
+        $uploads = Upload::all();
+        return view('uploads')->with('uploads',$uploads);
+    }
+ 
     public function imageUpload()
     {
         return view('upload-file');
