@@ -38,7 +38,8 @@ Auth::routes();
 Route::put('/uploads/{upload}','UploadController@update')->name('uploads.update');
 Auth::routes();
 Route::delete('/uploads/{upload}','UploadController@destroy')->name('uploads.destroy');
-
+Auth::routes();
+Route::get('/author-works','UploadController@author_works')->name('author.works');
 //DELETE	/photos/{photo}	destroy	photos.destroy
 //PUT/PATCH	/photos/{photo}	update	photos.update
 //GET	/photos/{photo}/edit	edit	photos.edit

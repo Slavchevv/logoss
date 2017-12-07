@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMsgsTable extends Migration
+class CreateAuthorrsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateMsgsTable extends Migration
      */
     public function up()
     {
-        /*Schema::create('msgs', function (Blueprint $table) {
+        /*Schema::create('authors', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email');
-            $table->mediumText('msg');
+            $table->string('initials');
+            $table->string('pseudonym');
+            $table->string('born');
+            $table->string('biography');
             $table->timestamps();
         });*/
     }
@@ -29,6 +31,8 @@ class CreateMsgsTable extends Migration
      */
     public function down()
     {
-        //Schema::dropIfExists('msgs');
+        /*Schema::table('authors', function (Blueprint $table) {
+            $table->dropColumn('biography');
+        });*/
     }
 }

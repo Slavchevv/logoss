@@ -10,4 +10,7 @@ class Upload extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+    public function author(){
+        return $this->belongsTo('App\Avtor');
+    }
 }

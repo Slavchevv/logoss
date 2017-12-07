@@ -13,14 +13,14 @@ class CreateUploadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('uploads', function (Blueprint $table) {
+        /*Schema::create('uploads', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->longText('description');
             $table->string('imgURL');
             $table->string('txtURL');
             $table->timestamps();
-        });
+        });*/
     }
 
     /**
@@ -30,6 +30,8 @@ class CreateUploadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('uploads');
+        Schema::table('uploads', function (Blueprint $table) {
+            $table->dropColumn('author_id');
+        });
     }
 }

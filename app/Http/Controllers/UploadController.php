@@ -7,7 +7,10 @@ use Illuminate\Contracts\Filesystem\Filesystem;
 use Storage;
 use App\Upload;
 use App\User;
+
+use Illuminate\Support\Facades\Auth;
 class UploadController extends Controller
+
 {
 
     public function index()
@@ -30,13 +33,20 @@ class UploadController extends Controller
     public function uploads()
     {
         $user_id = auth()->user('id');
+        $user_id = Auth::id();
         $uploads = Upload::whereHas('user', function ($query) use($user_id) {
             $query->where('id', $user_id);
         })
             ->paginate(10);
         return view('uploads')->with('uploads',$uploads);
     }
+    public function author_works()
+    {
 
+        $uploads= Upload::where('avtor_id', 3)->first();
+        dd($uploads);
+        return view('author-works')->with('uploads',$uploads);
+    }
 
     public function show($id)
     {
@@ -78,6 +88,9 @@ class UploadController extends Controller
         $upload = Upload::find($id);
         $upload->name = $request->input('title');
         $upload->description = $request->input('description');
+        $upload->description = $request->input('description');
+        //$user_id = auth()->user('id');
+        //$upload->user_id = Auth::id();
         //$upload->description = $request->input('desc');author
         //$upload->imgURL = $imageName;
         //$upload->txtURL = $textFileName;
@@ -127,12 +140,19 @@ class UploadController extends Controller
 
 
 
+
         $upload = new Upload;
         $upload->name = $request->input('title');
         $upload->description = $request->input('description');
         //$upload->description = $request->input('desc');author
+        //$upload->user_id = auth()->user()->id();
+
+        $upload->user_id = Auth::id();
+        $upload->avtor_id = Auth::id();
+        //dd($upload);
         $upload->imgURL = $imageName;
         $upload->txtURL = $textFileName;
+
         $upload->save();
         return redirect('/uploads');
         return back()
