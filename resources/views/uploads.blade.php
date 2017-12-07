@@ -9,7 +9,7 @@
 
     </div>
         @endforeach
-             {{$uploads->links()}}
+           {{$uploads->links()}}
     @else
     <p>No uploads found</p>
     @endif
