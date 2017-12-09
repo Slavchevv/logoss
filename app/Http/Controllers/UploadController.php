@@ -43,8 +43,8 @@ class UploadController extends Controller
     public function author_works()
     {
 
-        $uploads= Upload::where('avtor_id', 3)->first();
-        dd($uploads);
+        $uploads= Upload::where('avtor_id', 3)->get();
+        //dd($uploads);
         return view('author-works')->with('uploads',$uploads);
     }
 
