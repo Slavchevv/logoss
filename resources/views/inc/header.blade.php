@@ -46,7 +46,7 @@
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="#">Profile</a>
-                            <a class="dropdown-item" href="#">Points</a>
+                            <a class="dropdown-item" href="#">Points <span class="badge badge-pill badge-success">10</span></a>
                             <a class="dropdown-item" href="#">Help</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" onclick="window.location='{{ route('logout') }}'">Log out</a>

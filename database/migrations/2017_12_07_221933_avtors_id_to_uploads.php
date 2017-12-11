@@ -13,13 +13,13 @@ class AvtorsIdToUploads extends Migration
      */
     public function up()
     {
-        Schema::table('uploads', function($table){
+       /* Schema::table('uploads', function($table){
             $table->integer('avtor_id')->unsigned();
         });
 
         Schema::table('uploads', function($table) {
             $table->foreign('avtor_id')->references('id')->on('avtors');
-        });
+        });*/
         //
     }
 

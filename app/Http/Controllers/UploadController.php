@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Avtor;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Storage;
@@ -32,12 +33,24 @@ class UploadController extends Controller
     }*/
     public function uploads()
     {
-        $user_id = auth()->user('id');
-        $user_id = Auth::id();
+        //$user_id = auth()->user('id');
+/*        $user_id = Auth::id();
         $uploads = Upload::whereHas('user', function ($query) use($user_id) {
             $query->where('id', $user_id);
-        })
-            ->paginate(10);
+        })->get();
+        foreach ( $uploads  as  $upload) {
+            $author = Avtor::where('id', $upload->avtor_id)->get();
+            foreach ( $author  as  $auth) {
+                $upload->avtor_id = $auth->name;
+            }
+        }
+        /*->paginate(5);*/
+        //$uploads->items();
+
+       // dd($uploads);*/
+
+        $uploads = Auth::user()->upload()->with('author')->paginate(10);
+        dd($uploads);
         return view('uploads')->with('uploads',$uploads);
     }
     public function author_works()
@@ -149,6 +162,7 @@ class UploadController extends Controller
 
         $upload->user_id = Auth::id();
         $upload->avtor_id = Auth::id();
+        $upload->status = -1;
         //dd($upload);
         $upload->imgURL = $imageName;
         $upload->txtURL = $textFileName;

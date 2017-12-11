@@ -488,3 +488,19 @@ textarea.form-control {
     width: 1088px;
     height: 150px;
 }
+/*pagination*/
+.pagination{
+    margin-top:10px;
+}
+.page-item.active .page-link {
+
+    background-color: #F7931D !important;
+    border-color: #F7931D !important;
+}
+.page-link{
+    color:#F7931D !important;
+}
+.page-item.active .page-link{
+    color:white !important;
+}
+/*pagination*/

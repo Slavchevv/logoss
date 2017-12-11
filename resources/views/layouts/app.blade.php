@@ -125,7 +125,7 @@
 <footer class = "footer2">
 <footer class = "footer2">
 
-    @include('inc.footer')
+    {{--@include('inc.footer')--}}
 
 </footer>
 

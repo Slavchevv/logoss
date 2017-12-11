@@ -8,27 +8,44 @@
 @foreach($uploads as $upload)
 
 
+               {{-- @if ($upload->status === -1)
+                    I have one record!
+                @elseif ($upload->status === 0)
+                    I have multiple records!
+                @elseif ($upload->status === 1)
+                    I don't have any records!
+                @endif
+--}}
+
         <a href="/uploads/{{$upload->id}}" class="list-group-item list-group-item-action flex-column align-items-start col-md-4">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group item heading</h5>
-                <small>3 days ago</small>
+                <h5 class="mb-1">{{$upload->name}}</h5>
+
+                @if ($upload->status === -1)
+                    <h5> <span class="badge badge-pill badge-warning">Pending</span></h5>
+                @elseif ($upload->status === 0)
+
+                @elseif ($upload->status === 1)
+                    <h5> <span class="badge badge-pill badge-danger">Rejected</span></h5>
+                @endif
+
+
             </div>
-            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-            <small>Donec id elit non mi porta.</small>
+            <p class="mb-1">{{$upload->description}}</p>
+            <small>{{$upload->name}}</small>
         </a>
 
 
-
-
-
-   {{-- <div class="well">
+  {{--  <div class="well">
         <h3><a href="/uploads/{{$upload->id}}">{{$upload->name}}</a> </h3>
         <small>Written on {{$upload->created_at}}</small>
 
     </div>--}}
         @endforeach
+    {{$uploads->links("pagination::bootstrap-4")}}
+   {{-- {{$uploads->links()}}--}}
         </div>
-           {{--{{$uploads->links()}}--}}
+
     @else
     <p>No uploads found</p>
     @endif
