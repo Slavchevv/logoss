@@ -50,7 +50,10 @@ class UploadController extends Controller
        // dd($uploads);*/
 
         $uploads = Auth::user()->upload()->with('author')->paginate(10);
-        dd($uploads);
+        //$uploads = Upload::with('author')->where('user_id', auth()->id())->get();
+        $uploads = auth()->user()->load(['upload', 'upload.author'])->get();
+        //dd(auth()->user());
+        //dd($uploads);
         return view('uploads')->with('uploads',$uploads);
     }
     public function author_works()

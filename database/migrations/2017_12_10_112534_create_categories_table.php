@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AvtorsIdToUploads extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class AvtorsIdToUploads extends Migration
      */
     public function up()
     {
-        /*Schema::table('uploads', function($table){
-            $table->integer('avtor_id')->unsigned();
+         /*Schema::create('categories', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->timestamps();
         });*/
-
-       /* Schema::table('uploads', function($table) {
-            $table->foreign('avtor_id')->references('id')->on('avtors');
-        });*/
-        //
     }
 
     /**
@@ -30,6 +27,6 @@ class AvtorsIdToUploads extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('categories');
     }
 }
