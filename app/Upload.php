@@ -11,7 +11,7 @@ class Upload extends Model
         return $this->belongsTo('App\User');
     }
     public function author(){
-        return $this->belongsTo('App\Avtor');
+        return $this->belongsTo('App\Avtor', 'avtor_id');
     }
     public function category(){
         return $this->belongsToMany('App\Category');

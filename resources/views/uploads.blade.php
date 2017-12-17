@@ -32,7 +32,7 @@
 
             </div>
             <p class="mb-1">{{$upload->description}}</p>
-            <small>{{$upload->name}}</small>
+            <small>{{$upload->author}}</small>
         </a>
 
 

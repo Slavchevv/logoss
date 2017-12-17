@@ -40,6 +40,9 @@ Auth::routes();
 Route::delete('/uploads/{upload}','UploadController@destroy')->name('uploads.destroy');
 Auth::routes();
 Route::get('/author-works','UploadController@author_works')->name('author.works');
+Auth::routes();
+Route::resource('avtors', 'AvtorController');
+
 //DELETE	/photos/{photo}	destroy	photos.destroy
 //PUT/PATCH	/photos/{photo}	update	photos.update
 //GET	/photos/{photo}/edit	edit	photos.edit
