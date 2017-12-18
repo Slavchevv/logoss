@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MakeAvtorIdAFk extends Migration
+class AddUseridAsFkToAdmins extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class MakeAvtorIdAFk extends Migration
      */
     public function up()
     {
-        /*Schema::table('uploads', function($table) {
-            $table->foreign('avtor_id')->references('id')->on('avtors');
+        /*Schema::table('p_admins', function($table) {
+            $table->integer('user_id')->unsigned()->change();
+            $table->foreign('user_id')->references('id')->on('users');
         });*/
     }
 

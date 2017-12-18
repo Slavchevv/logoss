@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MakeAvtorIdAFk extends Migration
+class CreatePAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,15 @@ class MakeAvtorIdAFk extends Migration
      */
     public function up()
     {
-        /*Schema::table('uploads', function($table) {
-            $table->foreign('avtor_id')->references('id')->on('avtors');
+   /*     Schema::create('p_admins', function (Blueprint $table) {
+
+           $table->increments('id');
+            $table->integer('user_id')->unsigned();
+
+
         });*/
+
+
     }
 
     /**
@@ -25,6 +31,6 @@ class MakeAvtorIdAFk extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('p_admins');
     }
 }

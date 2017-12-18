@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Avtor;
+use App\PAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Storage;
@@ -48,8 +49,11 @@ class UploadController extends Controller
         //$uploads->items();
 
        // dd($uploads);*/
-
+        //$user_id = Auth::id();//needed later
+        //dd($user_id);
+       // $isAdmin = PAdmin::where('user_id',$user_id)->get();//needed later
         $uploads = Auth::user()->upload()->with('author')->paginate(5);
+
         //$uploads = Upload::with('author')->where('user_id', auth()->id())->get();
         //$uploads = auth()->user()->load(['upload', 'upload.author'])->get();
        //dd(auth()->user());
@@ -166,6 +170,7 @@ class UploadController extends Controller
         $upload->user_id = Auth::id();
         $upload->avtor_id = Auth::id();
         $upload->status = -1;
+        $upload-> downloads = 0;
         //dd($upload);
         $upload->imgURL = $imageName;
         $upload->txtURL = $textFileName;

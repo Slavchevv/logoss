@@ -30,5 +30,8 @@ class User extends Authenticatable
     public function upload(){
         return $this->hasMany('App\Upload');
     }
+    public function admin(){
+        return $this->hasOne('App\PAdmin');
+    }
 
 }

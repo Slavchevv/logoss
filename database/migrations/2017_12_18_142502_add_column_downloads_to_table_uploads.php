@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MakeAvtorIdAFk extends Migration
+class AddColumnDownloadsToTableUploads extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class MakeAvtorIdAFk extends Migration
      */
     public function up()
     {
-        /*Schema::table('uploads', function($table) {
-            $table->foreign('avtor_id')->references('id')->on('avtors');
-        });*/
+            Schema::table('uploads', function (Blueprint $table) {
+              $table->integer('downloads');
+          });
     }
+
 
     /**
      * Reverse the migrations.
