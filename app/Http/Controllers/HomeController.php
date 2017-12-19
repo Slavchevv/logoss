@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Upload;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -52,17 +53,23 @@ From (
 
 
 
-        $users = DB::select('Select category_id, uploads
-From (
-    Select category_id, SUM(downloads) as uploads
-    From uploads as u
-    Left join category_upload as uc on uc.id=u.id
-    Left join categories as c on c.id=uc.category_id
-    Group by  category_id    )as t
-  Order by uploads desc
-  Limit 10');
-        dd($users);
+        $categories = DB::select(' Select name, uploads
+            From (
+            Select c.name, SUM(downloads) as uploads
+            From uploads as u
+            INNER join category_upload as uc on uc.upload_id=u.id
+            INNER join categories as c on c.id=uc.category_id
+            Group by  c.name    )as t
+            Order by uploads desc
+             Limit 10');
+             //   dd($categories);
 
-        return view('home');
+        $uploads = Upload::take(10)->orderBy('downloads', 'DESC')->get();
+        //dd($categories);
+        $avtors = DB::select('Select name, uploads FROM(select av.name, SUM(downloads) as uploads FROM uploads as u INNER JOIN avtors AS av on av.id=u.avtor_id GROUP BY av.name) as t ORDER by uploads desc');
+       // dd($uploads);
+        //return view('home')->with('categories', $categories);
+        return view('home',compact('categories','uploads','avtors'));
+        //return view('controller.view', compact('users','projects','foods'));
     }
 }

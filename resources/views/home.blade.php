@@ -27,5 +27,6 @@
 
 @section('content')
     @include('inc.search')
+
     @include('inc.categories')
 @endsection
