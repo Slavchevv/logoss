@@ -5,7 +5,7 @@
            <ul>
                @foreach($categories as $category)
 
-                   <li><a class="orangelink" href="#">{{$category->name}}</a></li>
+                   <li><a href="/categories/{{$category->id}}" class="orangelink" href="#">{{$category->name}}</a></li>
                    {{--
                                                <div class="well">
                                                    <h3><a href="/uploads/{{$upload->id}}">{{$upload->name}}</a> </h3>
@@ -23,7 +23,7 @@
             <ul>
                 @foreach($uploads as $upload)
 
-                    <li><a class="orangelink" href="#">{{$upload->name}}</a></li>
+                    <li><a  href="/uploads/{{$upload->id}}" class="orangelink" href="#">{{$upload->name}}</a></li>
 
                 @endforeach
                 <li><strong><a class="orangelink" href="#">See more</a></strong></li>
@@ -35,7 +35,7 @@
             <ul>
                 @foreach($avtors as $avtor)
 
-                    <li><a class="orangelink" href="#">{{$avtor->name}}</a></li>
+                    <li><a href="/avtors/{{$avtor->id}}" class="orangelink" href="#">{{$avtor->name}}</a></li>
                 @endforeach
                 <li><strong><a class="orangelink" href="#">See more</a></strong></li>
 

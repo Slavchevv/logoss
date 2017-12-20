@@ -8,14 +8,14 @@
     <div class="row rowsb2">
         <div class="col-sm-7 mx-auto">
 
-                <div class="input-group stylish-input-group">
-                    <input type="text" class="form-control"  placeholder="Search" >
-                    <span class="input-group-addon">
-                        <button id = "btnSrch" type="submit"/>
-                            <!--<i class="fa fa-search" aria-hidden="true"></i>-->
-                            <span class="fa fa-search" aria-hidden="true"/>
-                    </span>
-                </div>
+            <div class="input-group stylish-input-group">
+                <input type="text" class="form-control"  placeholder="Search" />
+                <span class="input-group-addon">
+               <button id = "btnSrch" type="submit">
+               <span class="fa fa-search" aria-hidden="true"></span>
+              </button>
+              </span>
+            </div>
             </div>
 
     </div>

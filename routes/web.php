@@ -42,7 +42,11 @@ Auth::routes();
 Route::get('/author-works','UploadController@author_works')->name('author.works');
 Auth::routes();
 Route::resource('avtors', 'AvtorController');
+Auth::routes();
+Route::resource('categories', 'CategoryController');
 
+Route::get('search', array('as'=>'search', 'uses'=>'SearchController@search'));
+Route::get('autocomplete', array('as'=>'autocomplete', 'uses'=>'SearchController@autocomplete'));
 //DELETE	/photos/{photo}	destroy	photos.destroy
 //PUT/PATCH	/photos/{photo}	update	photos.update
 //GET	/photos/{photo}/edit	edit	photos.edit
