@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Avtor;
 use App\Category;
 use App\Upload;
 use Illuminate\Http\Request;
@@ -75,7 +76,13 @@ From (
     }
 
     public function search(Request $request){
-        $data = Avtor::select("name")->where("name","LIKE","%{$request->input('query')}%")->get();
-        return response()->json($data);
+
+        $search = $request->input('search');
+        $upload = Upload::where('name', 'like', '%' . $search . '%')->get();
+        $avtor = Avtor::where('name', 'like', '%' . $search . '%')->get();
+        //dd($upload);
+        //return view('search-results')->with('upload',$upload);
+
+        return view('search-results',compact('upload','avtor'));
     }
 }

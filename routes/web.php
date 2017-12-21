@@ -45,13 +45,13 @@ Route::resource('avtors', 'AvtorController');
 Auth::routes();
 Route::resource('categories', 'CategoryController');
 
-Route::get('search', array('as'=>'search', 'uses'=>'SearchController@search'));
-Route::get('autocomplete', array('as'=>'autocomplete', 'uses'=>'SearchController@autocomplete'));
+Route::post('/search-results', 'HomeController@search')->name('search');
+//Route::get('autocomplete', array('as'=>'autocomplete', 'uses'=>'HomeController@autocomplete'));
 //DELETE	/photos/{photo}	destroy	photos.destroy
 //PUT/PATCH	/photos/{photo}	update	photos.update
 //GET	/photos/{photo}/edit	edit	photos.edit
 /*Auth::routes();
-
+php artisan route:list
 
 Route::get('/home', 'HomeController@index')->name('home');
 
