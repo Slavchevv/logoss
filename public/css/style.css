@@ -503,4 +503,171 @@ textarea.form-control {
 .page-item.active .page-link{
     color:white !important;
 }
+/*book*/
+.book-wrapper{
+
+    padding-bottom: 170px;
+    background: rgba(224, 222, 222, 1);
+    margin-top: 80px;
+/*    width: 95%;*/
+
+}
+.book-box{
+
+   /* margin-top:5px !important;
+    margin-left:5px;*/
+
+}
+
+
+#book-desc {
+    margin-top: 20px !important;
+    text-align: justify !important;
+    text-justify: inter-word !important;
+/*    width: 500px;*/
+
+}
+#book-title{
+    /*margin-left:20px;*/
+}
+.row-one{
+/*    display:flex;*/
+}
+div.col-md-2.col-sm-2.col-2.image{
+
+/*    padding:0;
+    margin-right:-100px;*/
+}
+.row-three{
+
+
+}
 /*pagination*/
+
+
+
+/*rating*/
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+fieldset, label { margin: 0; padding: 0; }
+/*body{ margin: 20px; }*/
+h1 { font-size: 1.5em; margin: 10px; }
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+    border: none;
+    float: left;
+    margin-top: 30px;
+    margin-left: -119px;
+}
+
+.rating > input { display: none; }
+.rating > label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating > .half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating > label {
+   /* color: #ddd;*/
+    float: right;
+
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
+#rate-this-book{
+    margin-top:10px;
+    margin-left: 72px;
+}
+
+/*share*/
+.fa-facebook{
+    font-size: 1.5em;
+    margin-top: 28px;
+    margin-left: -47px;
+}
+.fa-envelope-o{
+    font-size: 1.5em;
+
+    margin-top: 28px;
+    margin-left: 12px;
+}
+.fa-arrow-circle-down{
+    font-size: 3em;
+    margin-top: 27px;
+    margin-left: -53px;
+    color:#F7931D;
+}
+.svd {
+    font-size: 3em;
+    /*margin-top: 27px;*/
+    margin-left: 23px;
+    color:#F7931D;
+}
+
+#this-book-save{
+
+    margin-left:17px;
+
+}
+
+
+#share-this-book{
+/*    margin-top: 72px;
+    margin-left: -92px;*/
+    margin-top: 3px;
+    margin-left: 64px;
+}
+
+#this-book-categories {
+
+    margin-top: 23px;
+    margin-left: 41px;
+}
+#this-book-download {
+    margin-top: 5px;
+    margin-left: 47px;
+}
+.tags-book{
+
+    margin-top: 54px;
+    margin-left: -132px;
+
+}
+.top-five-books{
+
+    margin-top:20px;
+}
+
+.ratings{
+
+    margin-top: 10px;
+    margin-left: 44px;
+
+}
+
+/*tags*/
+
+
+/*.tag:hover::after {
+    border-left-color: crimson;
+}*/
