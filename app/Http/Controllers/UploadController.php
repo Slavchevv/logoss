@@ -6,6 +6,7 @@ use App\Avtor;
 use App\PAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Support\Facades\DB;
 use Storage;
 use App\Upload;
 use App\User;
@@ -70,8 +71,24 @@ class UploadController extends Controller
 
     public function show($id)
     {
-        $upload = Upload::find($id);
-        return view('show')->with('upload',$upload);
+        $uploads = Upload::where('id',$id)->with('author')->get();
+       //dd($uploads[0]);
+        $avtorID=$uploads[0]['attributes']['avtor_id'];
+        /* dd($avtorID);*/
+        // category = SELECT ca.id, ca.name from categories as ca inner join category_upload as cu on ca.id = cu.category_id where cu.upload_id = 1
+        //$upload = Upload::find($id);
+        //dd($uploads);
+        $author= Avtor::find($avtorID);
+        //dd($author);
+        $categories = DB::select('SELECT ca.id, ca.name from categories as ca inner join category_upload as cu on ca.id = cu.category_id where cu.upload_id ='.$id);
+        // dd($categories);
+
+        $topfive = DB::select("Select id, name, uploads From ( Select u.id, u.name , SUM(downloads) as uploads, a.id as avtor_id From avtors as a INNER join uploads as u on a.id=u.avtor_id Group by u.id, u.name, a.id )as t where avtor_id = '$avtorID' Order by uploads desc Limit 5");
+        // dd($topfive);
+            //Select id, name, uploads From ( Select u.id, u.name , SUM(downloads) as uploads, a.id as avtor_id From avtors as a INNER join uploads as u on a.id=u.avtor_id Group by u.id, u.name, a.id )as t where avtor_id = 1 Order by uploads desc Limit 5
+
+        return view('show',compact('uploads','categories','topfive', 'author'));
+       // return view('show')->with('upload',$upload);
     }
 
     public function edit($id)

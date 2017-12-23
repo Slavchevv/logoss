@@ -5,7 +5,7 @@
          <div class="container book-box">
             <div class="row row-one">
                <div class="col-md-2 col-lg-2 image">
-                  <img class="img-fluid" src="{{$upload->imgURL}}">
+                  <img class="img-fluid" src="{{$uploads[0]->imgURL}}">
                   <div class="row">
                   {{--<span id="rate-this-book"> Rate this book ! </span>--}}
                      <div class="ratings">
@@ -30,10 +30,28 @@
                   </div>
                   <div class="row">
                      <span id="this-book-categories"> In categories: </span>
+
                      <ul class="tags-book">
-                        <a href="#" class="badge badge-warning">Psychology</a>
-                        <a href="#" class="badge badge-warning">Philosophy</a>
-                        <a href="#" class="badge badge-warning">Religion</a>
+                        @if(isset($categories[0]))
+                           <a href="/categories/{{$categories[0]->id}}" class="badge badge-warning">{{$categories[0]->name}}</a>
+                        @endif
+                           @if(isset($categories[1]))
+                              <a href="/categories/{{$categories[1]->id}}" class="badge badge-warning">{{$categories[1]->name}}</a>
+                           @endif
+                           @if(isset($categories[2]))
+                              <a href="/categories/{{$categories[2]->id}}" class="badge badge-warning">{{$categories[2]->name}}</a>
+                           @endif
+                     </ul>
+                     <ul class="tags-book">
+                        @if(isset($categories[3]))
+                           <a href="/categories/{{$categories[3]->id}}" class="badge badge-warning">{{$categories[0]->name}}</a>
+                        @endif
+                        @if(isset($categories[4]))
+                           <a href="/categories/{{$categories[4]->id}}" class="badge badge-warning">{{$categories[1]->name}}</a>
+                        @endif
+                        @if(isset($categories[5]))
+                           <a href="/categories/{{$categories[5]->id}}" class="badge badge-warning">{{$categories[2]->name}}</a>
+                        @endif
                      </ul>
                    {{--  <span id="this-book-save"> Save it! </span>
 
@@ -41,21 +59,21 @@
                   </div>
                </div>
                <div class="col-md-6 col-lg-6 image">
-                  <h2 id="book-title">{{$upload->name}}</h2><p>by Friedrich Nietzsche</p>
-                  <div id="book-desc">{{$upload->description}}</div>
+                  <h2 id="book-title">{{$uploads[0]->name}}</h2><p>by <a class = "orangelink" href="/avtors/{{$author->id}}">{{$author->name}}</a></p>
+        {{--          <h3><a href="/uploads/{{$upload->id}}">{{$upload->name}}</a> </h3>--}}
+                  <div id="book-desc">{{$uploads[0]->description}}</div>
                   </div>
                <div class="col-md-3 col-lg-3 image">
                {{--   <div class="row row-three">--}}
                   <h3>Top 5 books</h3>
-                  <p>by Friedrich Nietzsche</p>
-                  <img src="{{$upload->imgURL}}" height="109.5" width="100">
+                  <p>by <a class = "orangelink" href="/avtors/{{$author->id}}">{{$author->name}}</a></p>
+                  <img src="{{$uploads[0]->imgURL}}" height="109.5" width="100">
                   <p class="top-five-books">
-                  <p><a href="#" class="orangelink">{{$upload->name}}</a></p>
-                  <p><a href="#" class="orangelink">{{$upload->name}}</a></p>
-                  <p><a href="#" class="orangelink">{{$upload->name}}</a></p>
-                  <p><a href="#" class="orangelink">{{$upload->name}}</a></p>
-                  <p><a href="#" class="orangelink">{{$upload->name}}</a></p>
-
+                  <p><a href="/uploads/{{$topfive[0]->id}}" class="orangelink">{{$topfive[0]->name}}</a></p>
+                  <p><a href="/uploads/{{$topfive[1]->id}}" class="orangelink">{{$topfive[1]->name}}</a></p>
+                  <p><a href="/uploads/{{$topfive[2]->id}}" class="orangelink">{{$topfive[2]->name}}</a></p>
+                  <p><a href="/uploads/{{$topfive[3]->id}}" class="orangelink">{{$topfive[3]->name}}</a></p>
+                  <p><a href="/uploads/{{$topfive[4]->id}}" class="orangelink">{{$topfive[4]->name}}</a></p>
                 {{--  </div>--}}
                   </div>
                <div class="col-md-1 col-lg-1">
