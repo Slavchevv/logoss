@@ -671,3 +671,18 @@ h1 { font-size: 1.5em; margin: 10px; }
 /*.tag:hover::after {
     border-left-color: crimson;
 }*/
+.hline-bottom {
+    padding-bottom: 10px;
+    border-bottom: 1.8px solid #9c9c9c; /* whichever color you prefer */
+}
+
+.list-group-item {
+    background-color: #ddd !important;
+}
+.btndiv{
+    margin-top:10px;
+}
+.btnseemoreauthor{
+    margin-top: 10px;
+
+}

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Avtor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AvtorController extends Controller
 {
@@ -48,7 +49,11 @@ class AvtorController extends Controller
     {
         //$author = Avtor::find($id);
         $author = Avtor::find($id);
-        return view('author')->with('author',$author);
+        $topfive = DB::select("Select id, name, uploads From ( Select u.id, u.name , SUM(downloads) as uploads, a.id as avtor_id From avtors as a INNER join uploads as u on a.id=u.avtor_id Group by u.id, u.name, a.id )as t where avtor_id = '$id' Order by uploads desc Limit 5");
+
+        //return view('author')->with('author',$author);
+
+        return view('author',compact('topfive', 'author'));
     }
 
     /**

@@ -13,9 +13,9 @@ class AddColumnDownloadsToTableUploads extends Migration
      */
     public function up()
     {
-            Schema::table('uploads', function (Blueprint $table) {
+  /*          Schema::table('uploads', function (Blueprint $table) {
               $table->integer('downloads');
-          });
+          });*/
     }
 
 
