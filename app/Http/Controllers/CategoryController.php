@@ -15,7 +15,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::orderBy('name', 'asc')->get();
+
+        //dd($categories);
+        return view('categories')->with('categories',$categories);
     }
 
     /**
@@ -52,7 +55,8 @@ class CategoryController extends Controller
         //shows all books from give category
        // $author = Category::find($id);
         $uploads = Category::find($id)->uploads()->get();
-        //dd($uploads);
+
+
         return view('category-uploads')->with('uploads',$uploads);
     }
 
@@ -62,6 +66,12 @@ class CategoryController extends Controller
         //$uploads= Upload::where('avtor_id', 3)->get();
         //dd($uploads);
        // return view('author-works')->with('uploads',$uploads);
+
+
+       // $categories = Category::orderBy('name', 'desc')->get();
+
+
+        //return view('categories')->with('categories',$categories);
     }
 
     /**
