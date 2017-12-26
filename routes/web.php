@@ -25,6 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 Route::get('/upload','UploadController@index')->name('upload');
 Auth::routes();
+Route::get('/books', 'UploadController@books')->name('books');
 Route::get('/upload-file','UploadController@imageUpload')->name('upload-file');
 Auth::routes();
 Route::post('/upload-file','UploadController@imageUploadPost')->name('upload-file');
@@ -46,6 +47,8 @@ Auth::routes();
 Route::resource('categories', 'CategoryController');
 
 Route::post('/search-results', 'HomeController@search')->name('search');
+
+
 //Route::get('autocomplete', array('as'=>'autocomplete', 'uses'=>'HomeController@autocomplete'));
 //DELETE	/photos/{photo}	destroy	photos.destroy
 //PUT/PATCH	/photos/{photo}	update	photos.update

@@ -54,10 +54,13 @@ class CategoryController extends Controller
 
         //shows all books from give category
        // $author = Category::find($id);
-        $uploads = Category::find($id)->uploads()->get();
+        $books = Category::find($id)->uploads()->get();
 
+        $category = Category::find($id);
 
-        return view('category-uploads')->with('uploads',$uploads);
+        //dd($category);
+        return view('category-uploads',compact('books', 'category'));
+        //return view('category-uploads')->with('uploads',$uploads);
     }
 
     public function categories()

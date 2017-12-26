@@ -21,6 +21,15 @@ class UploadController extends Controller
         return view('upload');
     }
 
+    public function books()
+    {
+        $books = Upload::orderBy('name', 'asc')->get();
+
+        //dd($books);
+
+        return view('books')->with('books',$books);
+    }
+
   /*  public function uploads()
     {
         //return Upload::all();
@@ -68,6 +77,8 @@ class UploadController extends Controller
         //dd($uploads);
         return view('author-works')->with('uploads',$uploads);
     }
+
+
 
     public function show($id)
     {

@@ -52,25 +52,206 @@
             @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'A'); }))
             @foreach ($categoriesStartFromA as $category)
 
-                <p><a class="orangelink" href="">{{$category->name}}</a></p>
+                <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
 
             @endforeach
 
-                <button type="button" class="btn btn-secondary">B</button>
+                <button type="button" class="btn btn-secondary alphabutton">B</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'B'); }))
                 @foreach ($categoriesStartFromA as $category)
 
-                    <p><a class="orangelink" href="">{{$category->name}}</a></p>
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary">C</button>
+                <button type="button" class="btn btn-secondary alphabutton">C</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'C'); }))
                 @foreach ($categoriesStartFromA as $category)
 
-                    <p><a class="orangelink" href="">{{$category->name}}</a></p>
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">D</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'D'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">E</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'E'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">F</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'F'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">G</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'G'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">H</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'H'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">L</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'L'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">M</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'M'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">N</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'N'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">O</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'O'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">P</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'P'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+
+                <button type="button" class="btn btn-secondary alphabutton">Q</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'Q'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">R</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'R'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">S</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'S'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">T</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'T'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">U</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'U'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">V</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'V'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">W</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'W'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">X</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'X'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">Y</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'Y'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
+
+                @endforeach
+
+                <button type="button" class="btn btn-secondary alphabutton">Z</button>
+
+                @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'Z'); }))
+                @foreach ($categoriesStartFromA as $category)
+
+                    <p><a class="orangelink" href=/categories/{{$category->id}}">{{$category->name}}</a></p>
 
                 @endforeach
 
