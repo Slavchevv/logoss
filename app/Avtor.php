@@ -11,4 +11,17 @@ class Avtor extends Model
         return $this->hasMany('App\Upload');
 
     }
+
+    public function images(){
+
+        return $this->hasMany('App\Image');
+
+    }
+
 }
+
+
+
+
+
+

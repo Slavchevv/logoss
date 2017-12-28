@@ -41,8 +41,8 @@
  /*   $(document).on('click','#btnSrch',function(){
         console.log("hi");
     });*/
-    $(document).on('click','#btnSrch',function(){
-      /*  var data = "success";
+    /*$(document).on('click','#btnSrch',function(){
+      /!*  var data = "success";
         $.ajax({
             url: 'search-results',
             type: "get",
@@ -51,9 +51,16 @@
                 if(data == "success")
                     console.log(response);
             }
-        });*/
+        });*!/
 
-    });
+    });*/
+
+ $(".dropdown-item").click(function(e){
+     e.preventDefault();
+
+     $("form").submit();
+
+ });
 
 </script>
 </body>

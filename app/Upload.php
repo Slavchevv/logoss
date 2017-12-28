@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Upload extends Model
 {
-    //
     public function user(){
         return $this->belongsTo('App\User');
     }
@@ -16,4 +15,22 @@ class Upload extends Model
     public function category(){
         return $this->belongsToMany('App\Category');
     }
+    public function users()
+    {
+        return $this->belongsToMany('App\User', 'upload_user', 'upload_id', 'user_id');
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

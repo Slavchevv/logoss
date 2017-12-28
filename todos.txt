@@ -1,0 +1,14 @@
+TODO
+
+Images table - one author  -  many images
+
+
+Favorites table - one user - many favorites
+
+
+add aditionol formats table (formats?) one upload many formats
+
+
+many to many favorites table - user_upload
+
+many to many saved table

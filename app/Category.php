@@ -11,9 +11,13 @@ class Category extends Model
         return $this->belongsToMany('App\Upload');
     }
 
-    /*   public function downloads()
-       {
-           return $this->hasMany('App\Upload','category_upload','category_id','upload_id');
-       }
-   */
 }
+
+
+
+
+
+
+
+
+

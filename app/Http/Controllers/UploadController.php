@@ -23,9 +23,8 @@ class UploadController extends Controller
 
     public function books()
     {
-        $books = Upload::orderBy('name', 'asc')->get();
 
-        //dd($books);
+        $books = Upload::orderBy('name', 'asc')->get();
 
         return view('books')->with('books',$books);
     }

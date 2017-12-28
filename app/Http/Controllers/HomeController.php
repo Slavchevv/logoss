@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Avtor;
 use App\Category;
+use App\PAdmin;
 use App\Upload;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -26,33 +28,13 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   //$books_category = Category::where('name','History')->with('uploads')->get();
-        $books_category = Category::select("*")->with(['downloads' => function($q){
-            $q->oderBy('downloads','desc')->take(10)->get();
-        }]);
-/*        Select category_id, uploads
-From (
-    Select category_id, SUM(downloads) as uploads
-    From uploads as u
-    INNER join category_upload as uc on uc.upload_id=u.id
-    INNER join categories as c on c.id=uc.category_id
-    Group by  category_id    )as t
-  Order by uploads desc
-  Limit 10
-        */
+    {
 
-/*        Select name, uploads
-From (
-    Select c.name, SUM(downloads) as uploads
-    From uploads as u
-    INNER join category_upload as uc on uc.upload_id=u.id
-    INNER join categories as c on c.id=uc.category_id
-    Group by  c.name    )as t
-  Order by uploads desc
-  Limit 10*/
+        $user_id = Auth::id();//needed later
+        //dd($user_id);
 
-
-
+       // $isAdmin = PAdmin::where('user_id',$user_id)->get();
+        //dd($isAdmin);
 
         $categories = DB::select(' Select id, name, uploads
             From (
@@ -71,6 +53,8 @@ From (
         $avtors = DB::select('Select id, name, uploads FROM(select av.id, av.name, SUM(downloads) as uploads FROM uploads as u INNER JOIN avtors AS av on av.id=u.avtor_id GROUP BY av.id, av.name) as t ORDER by uploads desc');//
         //dd($uploads);
         //return view('home')->with('categories', $categories);
+
+        if(PAdmin::where('user_id',Auth::id())->first() != null) return redirect('/admin');
         return view('home',compact('categories','uploads','avtors'));
         //return view('controller.view', compact('users','projects','foods'));
     }

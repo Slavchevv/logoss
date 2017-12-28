@@ -22,6 +22,7 @@ Route::get('/uploads', function () {
 Route::post('/contact/submit', 'MessagesController@submit');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 Route::get('/upload','UploadController@index')->name('upload');
 Auth::routes();
@@ -45,9 +46,12 @@ Auth::routes();
 Route::resource('avtors', 'AvtorController');
 Auth::routes();
 Route::resource('categories', 'CategoryController');
-
+Route::resource('admin', 'AdminController');
+Route::get('/manage', 'AdminController@manage');
+Route::get('/manage/pending', 'AdminController@manage_pending');
+Route::get('/manage/rejected', 'AdminController@manage_rejected');
+Route::get('/manage/approved', 'AdminController@manage_approved');
 Route::post('/search-results', 'HomeController@search')->name('search');
-
 
 //Route::get('autocomplete', array('as'=>'autocomplete', 'uses'=>'HomeController@autocomplete'));
 //DELETE	/photos/{photo}	destroy	photos.destroy
