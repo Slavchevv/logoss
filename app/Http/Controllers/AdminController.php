@@ -105,26 +105,17 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id,$status)
+    public function update(Request $request, $id, $status)
     {
-        dd($id);
+        //dd($id,$status);
 
 
 
-        /*$upload = Upload::find($id);
-        $upload->name = $request->input('title');
-        $upload->description = $request->input('description');
-        $upload->description = $request->input('description');
-        //$user_id = auth()->user('id');
-        //$upload->user_id = Auth::id();
-        //$upload->description = $request->input('desc');author
-        //$upload->imgURL = $imageName;
-        //$upload->txtURL = $textFileName;
+        $upload = Upload::find($id);
+        $upload->status = $status;
         $upload->save();
-        return redirect('/uploads');
-        return back()
-            ->with('success','Image Uploaded successfully.')
-            ->with('path',$imageName);*/
+        return redirect('/manage');
+
     }
 
     /**

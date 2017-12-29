@@ -74,13 +74,28 @@
                   <p><a href="/uploads/{{$topfive[2]->id}}" class="orangelink">{{$topfive[2]->name}}</a></p>
                   <p><a href="/uploads/{{$topfive[3]->id}}" class="orangelink">{{$topfive[3]->name}}</a></p>
                   <p><a href="/uploads/{{$topfive[4]->id}}" class="orangelink">{{$topfive[4]->name}}</a></p>
+
+
+                   {{--{!! Form::open(['action'=>['AdminController@update',$upload->id,0], 'method'=>'POST']) !!}
+                                {{Form::hidden('_method','PUT')}}
+                                {{Form::submit('Submit', ['class'=>'btn btn-success'])}}
+                                <a class="dropdown-item" href="/manage">Approve</a>
+                                {!! Form::close()!!}
+                                <a class="dropdown-item" href="/manage">Reject</a>
+
+                            </div>
+                        </div>
+                        {!! Form::close()!!}--}}
+
                 {{--  </div>--}}
                   </div>
                <div class="col-md-1 col-lg-1">
-
+                   {!! Form::open(['action'=>['UploadController@save_book',$uploads[0]->id,0], 'method'=>'POST']) !!}
                   <span id="this-book-save"> Save it! </span>
-
-                  <i class="fa fa-bookmark-o svd" aria-hidden="true"></i>
+                   {{Form::hidden('_method','PUT')}}
+                   {{Form::button('<i class="fa fa-bookmark-o svd" aria-hidden="true"></i>',['id'=>'svd','type' => 'submit'])}}
+                {{--  <i class="fa fa-bookmark-o svd" aria-hidden="true"></i>--}}
+                   {!! Form::close()!!}
                </div>
                </div>
     {{--  </div>--}}

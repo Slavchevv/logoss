@@ -49,14 +49,15 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 {!! Form::open(['action'=>['AdminController@update',$upload->id,0], 'method'=>'POST']) !!}
                                 {{Form::hidden('_method','PUT')}}
-                                {{Form::submit('Submit', ['class'=>'btn btn-success'])}}
                                 <a class="dropdown-item" href="/manage">Approve</a>
                                 {!! Form::close()!!}
+                                {!! Form::open(['action'=>['AdminController@update',$upload->id,1], 'method'=>'POST']) !!}
+                                {{Form::hidden('_method','PUT')}}
                                 <a class="dropdown-item" href="/manage">Reject</a>
-
+                                {!! Form::close()!!}
                             </div>
                         </div>
-                        {!! Form::close()!!}
+
                     </td>
                 </tr>
                 @endforeach

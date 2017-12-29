@@ -52,7 +52,8 @@ Route::get('/manage/pending', 'AdminController@manage_pending');
 Route::get('/manage/rejected', 'AdminController@manage_rejected');
 Route::get('/manage/approved', 'AdminController@manage_approved');
 Route::post('/search-results', 'HomeController@search')->name('search');
-
+Route::put('/uploads/{upload}','UploadController@save_book')->name('uploads.update');
+Route::put('/admin/{admin}/{status}','AdminController@update');
 //Route::get('autocomplete', array('as'=>'autocomplete', 'uses'=>'HomeController@autocomplete'));
 //DELETE	/photos/{photo}	destroy	photos.destroy
 //PUT/PATCH	/photos/{photo}	update	photos.update

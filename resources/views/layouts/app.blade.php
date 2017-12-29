@@ -55,11 +55,16 @@
 
     });*/
 
- $(".dropdown-item").click(function(e){
+ /*$(".dropdown-item").click(function(e){
      e.preventDefault();
 
      $("form").submit();
 
+ });*/
+
+ $(".dropdown-item").click(function(e){
+     e.preventDefault();
+     $(this).closest("form").submit();
  });
 
 </script>

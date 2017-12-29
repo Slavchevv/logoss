@@ -54,7 +54,7 @@ class HomeController extends Controller
         //dd($uploads);
         //return view('home')->with('categories', $categories);
 
-        if(PAdmin::where('user_id',Auth::id())->first() != null) return redirect('/admin');
+       /* if(PAdmin::where('user_id',Auth::id())->first() != null) return redirect('/admin');*/
         return view('home',compact('categories','uploads','avtors'));
         //return view('controller.view', compact('users','projects','foods'));
     }

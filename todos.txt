@@ -12,3 +12,10 @@ add aditionol formats table (formats?) one upload many formats
 many to many favorites table - user_upload
 
 many to many saved table
+
+
+
+
+--
+
+add delete and edit to items
