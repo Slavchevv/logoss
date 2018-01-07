@@ -2,6 +2,12 @@
 @section('content')
 
     <div class="container">
+        <div class="container w-95 p-3 mx-auto">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class = "orangelink" href="/home">Home</a></li>
+                <li class="breadcrumb-item active">Categories</li>
+            </ol>
+        </div>
 
         <div class="row">
             <div class="mx-auto col-lg-10 col-sm-10 col-md-10">

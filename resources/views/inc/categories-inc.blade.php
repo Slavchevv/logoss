@@ -6,13 +6,7 @@
                @foreach($categories as $category)
 
                    <li><a href="/categories/{{$category->id}}" class="orangelink" href="#">{{$category->name}}</a></li>
-                   {{--
-                                               <div class="well">
-                                                   <h3><a href="/uploads/{{$upload->id}}">{{$upload->name}}</a> </h3>
-                                                   <small>Written on {{$upload->created_at}}</small>
 
-                                               </div>
-                   --}}
                @endforeach
                <li><strong><a class="orangelink" href="#">See more</a></strong></li>
 

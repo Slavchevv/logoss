@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFksToUploadUser extends Migration
+class AddFksToPoints extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,11 @@ class AddFksToUploadUser extends Migration
      */
     public function up()
     {
-        /* Schema::table('upload_user', function (Blueprint $table) {
+         //Schema::table('points', function (Blueprint $table) {
 
+           /*  $table->foreign('user_id')->references('id')->on('users');*/
 
-
-             $table->foreign('upload_id')->references('id')->on('uploads');
-
-             $table->foreign('user_id')->references('id')->on('users');
-
-
-
-
-      });*/
+     // });
     }
 
     /**
@@ -34,6 +27,8 @@ class AddFksToUploadUser extends Migration
      */
     public function down()
     {
+
+
         //
     }
 }

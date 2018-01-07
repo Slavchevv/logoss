@@ -19,7 +19,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+      //  $this->middleware('auth');
     }
 
     /**
@@ -56,7 +56,7 @@ class HomeController extends Controller
 
        /* if(PAdmin::where('user_id',Auth::id())->first() != null) return redirect('/admin');*/
         return view('home',compact('categories','uploads','avtors'));
-        //return view('controller.view', compact('users','projects','foods'));
+
     }
 
     public function search(Request $request){
@@ -69,7 +69,25 @@ class HomeController extends Controller
 
         return view('search-results',compact('upload','avtor'));
     }
+   /* public function download(Request $request, $link){
+        dd($request);
+        $filename = 'S3 FILE';
+        $tempImage = tempnam(sys_get_temp_dir(), $filename);
+        copy('https://logoss.s3.eu-west-2.amazonaws.com/1512666543.txt', $tempImage);
 
+        return response()->download($tempImage, $filename);
 
+    }*/
+    public function download() {
+        //get url from request
+        $link = request()->input('url');
+        $id = request()->input('id');
+        DB::table('uploads')->where('id', $id)->increment('downloads',1);
+        $filename = 'S3 FILE.txt';
+        $tempImage = tempnam(sys_get_temp_dir(), $filename);
+        copy($link, $tempImage);
+
+        return response()->download($tempImage, $filename);
+    }
 
 }

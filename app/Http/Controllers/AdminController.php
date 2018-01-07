@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Upload;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -107,15 +108,14 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id, $status)
     {
-        //dd($id,$status);
-
-
-
         $upload = Upload::find($id);
         $upload->status = $status;
         $upload->save();
-        return redirect('/manage');
 
+        if($status == 0){
+        DB::table('points')->where('id', $upload->user_id)->increment('points',10);
+        }
+        return redirect('/manage');
     }
 
     /**

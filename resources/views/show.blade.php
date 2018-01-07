@@ -25,7 +25,9 @@
 
                   <div class="row">
                      <span id="this-book-download"> Download! </span>
-
+               {{--       <a href="/download/{{url($uploads[0]->txtURL)}}" download="download">Download</a>--}}
+                      <a href="{{ route('download') }}?url={{ urlencode($uploads[0]->txtURL).'&'.'id='.$uploads[0]->id}}">Download</a>
+              {{--        <a href="/download/{{url($uploads[0]->txtURL)}}">Download</a>--}}
                      <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
                   </div>
                   <div class="row">
@@ -90,12 +92,14 @@
                 {{--  </div>--}}
                   </div>
                <div class="col-md-1 col-lg-1">
-                   {!! Form::open(['action'=>['UploadController@save_book',$uploads[0]->id,0], 'method'=>'POST']) !!}
+                  {!! Form::open(['action'=>['UploadController@save_book',$uploads[0]->id,0], 'method'=>'POST']) !!}
                   <span id="this-book-save"> Save it! </span>
                    {{Form::hidden('_method','PUT')}}
                    {{Form::button('<i class="fa fa-bookmark-o svd" aria-hidden="true"></i>',['id'=>'svd','type' => 'submit'])}}
-                {{--  <i class="fa fa-bookmark-o svd" aria-hidden="true"></i>--}}
-                   {!! Form::close()!!}
+                  {{-- <button id="svd"></button>--}}
+                 {{-- <i class="fa fa-bookmark-o svd" aria-hidden="true"></i>--}}
+               {{--    <a href="{{ route('savebook') }}?upload={{ $uploads[0]->id}}">Save</a>--}}
+               {!! Form::close()!!}
                </div>
                </div>
     {{--  </div>--}}

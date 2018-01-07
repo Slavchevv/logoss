@@ -62,11 +62,42 @@
 
  });*/
 
- $(".dropdown-item").click(function(e){
+/* $(".dropdown-item").click(function(e){
      e.preventDefault();
      $(this).closest("form").submit();
- });
+ });*/
 
+
+ $(document).ready(function() {
+
+         //e.preventDefault();
+         //var input = $('#inputserver').val();
+
+         /*$.ajax({
+             type: "GET",
+             url: './update-points',
+                 data: { test: comments  },
+             success: function (data) {
+                 // data is your result from controller
+                 if (data.success) {
+                     alert(data.message);
+                 }
+             }
+         });*/
+
+         $.get('update-points',function (data) {
+             console.log(data);
+             $("#pointsspan").text(data);
+         })
+
+        /* $.get('save_book',function (data) {
+             console.log(data);
+             $("#svd").text(data);
+         })*/
+     //console.log("abv");
+
+ });
+ //console.log("abv");
 </script>
 </body>
 

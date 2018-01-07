@@ -41,5 +41,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Upload', 'upload_user', 'upload_id', 'user_id');
     }
+    public function points()
+    {
+        return $this->hasOne('App\Points');
+    }
+
 
 }

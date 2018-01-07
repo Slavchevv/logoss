@@ -223,12 +223,23 @@ class UploadController extends Controller
         DB::insert('insert into upload_user (upload_id,user_id,type) values (?, ?,?)', [$upload_id,$user_id,0]);
 
 
+        /**/
+       /* $id = request()->input('upload');
+
+        $upload_id = $id;
+        $user_id = Auth::id();
+
+        //$categories = DB::select('SELECT ca.id, ca.name from categories as ca inner join category_upload as cu on ca.id = cu.category_id where cu.upload_id ='.$id);
+        DB::insert('insert into upload_user (upload_id,user_id,type) values (?, ?,?)', [$upload_id,$user_id,0]);*/
+
+
+
     }
     public function save_favorite(Request $request, $id)
     {
         $upload_id = $id;
         $user_id = Auth::id();
-
+        dd($upload_id);
         //$categories = DB::select('SELECT ca.id, ca.name from categories as ca inner join category_upload as cu on ca.id = cu.category_id where cu.upload_id ='.$id);
         DB::insert('insert into upload_user (upload_id,user_id,type) values (?, ?,?)', [$upload_id,$user_id,1]);
 
