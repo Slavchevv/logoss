@@ -14,29 +14,29 @@
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
 
-                        <li class="page-item"><a class="page-link" href="#">A</a></li>
-                        <li class="page-item"><a class="page-link" href="#">B</a></li>
-                        <li class="page-item"><a class="page-link" href="#">C</a></li>
-                        <li class="page-item"><a class="page-link" href="#">D</a></li>
-                        <li class="page-item"><a class="page-link" href="#">E</a></li>
-                        <li class="page-item"><a class="page-link" href="#">F</a></li>
-                        <li class="page-item"><a class="page-link" href="#">G</a></li>
-                        <li class="page-item"><a class="page-link" href="#">H</a></li>
-                        <li class="page-item"><a class="page-link" href="#">L</a></li>
-                        <li class="page-item"><a class="page-link" href="#">M</a></li>
-                        <li class="page-item"><a class="page-link" href="#">N</a></li>
-                        <li class="page-item"><a class="page-link" href="#">O</a></li>
-                        <li class="page-item"><a class="page-link" href="#">P</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Q</a></li>
-                        <li class="page-item"><a class="page-link" href="#">R</a></li>
-                        <li class="page-item"><a class="page-link" href="#">S</a></li>
-                        <li class="page-item"><a class="page-link" href="#">T</a></li>
-                        <li class="page-item"><a class="page-link" href="#">U</a></li>
-                        <li class="page-item"><a class="page-link" href="#">V</a></li>
-                        <li class="page-item"><a class="page-link" href="#">W</a></li>
-                        <li class="page-item"><a class="page-link" href="#">X</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Y</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Z</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">A</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">B</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">C</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">D</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">E</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">F</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">G</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">H</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">L</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">M</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">N</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">O</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">P</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">Q</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">R</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">S</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">T</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">U</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">V</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">W</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">X</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">Y</a></li>
+                        <li class="page-item abth"><a class="page-link" href="#">Z</a></li>
 
                     </ul>
                 </nav>
@@ -53,7 +53,7 @@
             <div class="mx-auto col-lg-3 col-sm-3 col-md-3">
 
 
-            <button type="button" class="btn btn-secondary alphabutton">A</button>
+                <button type="button" id="A" class="btn btn-secondary alphabutton">A</button>
 
             @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'A'); }))
             @foreach ($categoriesStartFromA as $category)
@@ -62,7 +62,7 @@
 
             @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">B</button>
+                <button type="button" id="B"  class="btn btn-secondary alphabutton">B</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'B'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -71,7 +71,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">C</button>
+                <button type="button" id="C" class="btn btn-secondary alphabutton">C</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'C'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -80,7 +80,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">D</button>
+                <button type="button" id="D"  class="btn btn-secondary alphabutton">D</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'D'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -89,7 +89,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">E</button>
+                <button type="button" id="E" class="btn btn-secondary alphabutton">E</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'E'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -98,7 +98,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">F</button>
+                <button type="button" id="F" class="btn btn-secondary alphabutton">F</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'F'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -107,7 +107,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">G</button>
+                <button type="button" id="G" class="btn btn-secondary alphabutton">G</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'G'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -116,7 +116,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">H</button>
+                <button type="button" id="H" class="btn btn-secondary alphabutton">H</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'H'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -125,7 +125,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">L</button>
+                <button type="button" id="L" class="btn btn-secondary alphabutton">L</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'L'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -134,7 +134,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">M</button>
+                <button type="button" id="M"  class="btn btn-secondary alphabutton">M</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'M'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -143,7 +143,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">N</button>
+                <button type="button" id="N"  class="btn btn-secondary alphabutton">N</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'N'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -152,7 +152,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">O</button>
+                <button type="button" id="O" class="btn btn-secondary alphabutton">O</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'O'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -161,7 +161,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">P</button>
+                <button type="button" id="P" class="btn btn-secondary alphabutton">P</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'P'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -171,7 +171,7 @@
                 @endforeach
 
 
-                <button type="button" class="btn btn-secondary alphabutton">Q</button>
+                <button type="button" id="Q" class="btn btn-secondary alphabutton">Q</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'Q'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -180,7 +180,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">R</button>
+                <button type="button" id="R" class="btn btn-secondary alphabutton">R</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'R'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -189,7 +189,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">S</button>
+                <button type="button" id="S"  class="btn btn-secondary alphabutton">S</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'S'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -198,7 +198,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">T</button>
+                <button type="button" id="T" class="btn btn-secondary alphabutton">T</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'T'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -207,7 +207,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">U</button>
+                <button type="button" id="U" class="btn btn-secondary alphabutton">U</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'U'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -216,7 +216,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">V</button>
+                <button type="button" id="V" class="btn btn-secondary alphabutton">V</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'V'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -225,7 +225,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">W</button>
+                <button type="button" id="W"  class="btn btn-secondary alphabutton">W</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'W'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -234,7 +234,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">X</button>
+                <button type="button" id="X" class="btn btn-secondary alphabutton">X</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'X'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -243,7 +243,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">Y</button>
+                <button type="button" id="Y"  class="btn btn-secondary alphabutton">Y</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'Y'); }))
                 @foreach ($categoriesStartFromA as $category)
@@ -252,7 +252,7 @@
 
                 @endforeach
 
-                <button type="button" class="btn btn-secondary alphabutton">Z</button>
+                <button type="button" id="Z"  class="btn btn-secondary alphabutton">Z</button>
 
                 @php ($categoriesStartFromA = $categories->filter(function($i) { return starts_with($i->name, 'Z'); }))
                 @foreach ($categoriesStartFromA as $category)
