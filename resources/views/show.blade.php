@@ -69,7 +69,6 @@
                {{--   <div class="row row-three">--}}
                   <h3>Top 5 books</h3>
                   <p>by <a class = "orangelink" href="/avtors/{{$author->id}}">{{$author->name}}</a></p>
-                  <img src="{{$uploads[0]->imgURL}}" height="109.5" width="100">
                   <p class="top-five-books">
                   <p><a href="/uploads/{{$topfive[0]->id}}" class="orangelink">{{$topfive[0]->name}}</a></p>
                   <p><a href="/uploads/{{$topfive[1]->id}}" class="orangelink">{{$topfive[1]->name}}</a></p>
@@ -93,7 +92,8 @@
                   </div>
                <div class="col-md-1 col-lg-1">
                   {!! Form::open(['action'=>['UploadController@save_book',$uploads[0]->id,0], 'method'=>'POST']) !!}
-                  <span id="this-book-save"> Save it! </span>
+               {{--   <span id="this-book-save"> Save it! </span>--}}
+         {{--          <a href="{{ route('savebk') }}?id={{$uploads[0]->id}}">Save it!</a>--}}
                    {{Form::hidden('_method','PUT')}}
                    {{Form::button('<i class="fa fa-bookmark-o svd" aria-hidden="true"></i>',['id'=>'svd','type' => 'submit'])}}
                   {{-- <button id="svd"></button>--}}

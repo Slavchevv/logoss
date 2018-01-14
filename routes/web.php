@@ -40,6 +40,12 @@ Route::get('/uploads/{upload}/edit','UploadController@edit')->name('uploads.edit
 
 Route::put('/uploads/{upload}','UploadController@update')->name('uploads.update');
 
+Route::put('/edit-record/{id}','UploadController@update');
+
+Route::get('/edit-record/{id}','AdminController@edit')->name('admin.update');
+
+Route::delete('/uploads/{upload}','UploadController@destroy')->name('uploads.destroy');
+
 Route::delete('/uploads/{upload}','UploadController@destroy')->name('uploads.destroy');
 
 Route::get('/author-works','UploadController@author_works')->name('author.works');
@@ -58,6 +64,8 @@ Route::put('/admin/{admin}/{status}','AdminController@update');
 Route::get('/update-points', 'MessagesController@update_points');
 /*Route::get('/download/{link}','HomeController@download');*/
 Route::get('/download','HomeController@download')->name('download');
+Route::get('/saved', 'UploadController@saved');
+//Route::get('/save-book','UploadController@save_book')->name('savebk');
 //Route::get('autocomplete', array('as'=>'autocomplete', 'uses'=>'HomeController@autocomplete'));
 //DELETE	/photos/{photo}	destroy	photos.destroy
 //PUT/PATCH	/photos/{photo}	update	photos.update

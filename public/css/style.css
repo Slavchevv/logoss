@@ -710,3 +710,19 @@ h1 { font-size: 1.5em; margin: 10px; }
 .no-transition {
     transition: none !important;
 }
+
+.contupl{
+    margin-top:60px;
+}
+
+.descinpt{
+    margin-left: 223px;
+}
+
+.btnupldfiles{
+    margin-left: 223px;
+}
+
+.listsaved{
+    background-color: #ECEEEF !important;
+}

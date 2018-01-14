@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="container uploadbox-wrapper">
         <div class="row">
 
@@ -13,7 +12,6 @@
                 <div class="row rowub2">
                     <div class="col-sm-7 mx-auto text-center font-italic">
                         Supported file types: pdf, txt, doc, ppt, xls, docx, and more
-
 
                     </div>
 
@@ -48,6 +46,7 @@
 
         </div>
     </div>
+
 
 @endsection
 

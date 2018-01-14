@@ -55,18 +55,20 @@
         });*!/
 
     });*/
+/*
 
- /*$(".dropdown-item").click(function(e){
-     e.preventDefault();
+ $(".dropdown-item").click(function(e){
+     //e.preventDefault();
 
      $("form").submit();
 
- });*/
+ });
+*/
 
-/* $(".dropdown-item").click(function(e){
+ $(".actiondrop").click(function(e){
      e.preventDefault();
      $(this).closest("form").submit();
- });*/
+ });
  $(".abth").click(function(e){
      var btnid='#'.concat($(this).text());
      console.log(btnid);
@@ -98,16 +100,48 @@
          $.get('update-points',function (data) {
              console.log(data);
              $("#pointsspan").text(data);
-         })
+         });
 
-        /* $.get('save_book',function (data) {
+       /*  $.get('this-book-save',function (data) {
              console.log(data);
              $("#svd").text(data);
          })*/
+    /* $("#svd").click(function(e){
+         e.preventDefault();
+         var data = $("#bksv").data().value;
+         console.log(data);
+
+         $.ajax({
+
+             url: './save-book',
+             data: {'id': data,'_token':'csrf_token()'  },
+             type: 'POST',
+             datatype: 'JSON',
+             success: function (response) {
+          /!*       if (response.status === true) {
+                     console.log('success');
+                 } else {
+                     document.getElementById('errcallbackModalOtp').innerHTML = "Some error occured .. Please try again later";
+//                        $('#errcallbackModalOtp').html('Some error occured .. Please try again later');
+                 }*!/
+             },
+             error: function (response) {
+                 /!*document.getElementById('errcallbackModalOtp').innerHTML = response.message;
+//                    $('#errcallbackModalOtp').html(response.message);*!/
+             }
+         });
+
+     });*/
      //console.log("abv");
 
  });
  //console.log("abv");
+    /*suggestions*/
+
+    /*suggestions*/
+
+
+
 </script>
 </body>
 

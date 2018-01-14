@@ -10,18 +10,18 @@
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>--}}
             <li class="nav-item active">
-                <a class="nav-link" href="#">Discover <i class="fa fa-compass" aria-hidden="true"></i></a>
+                <a class="nav-link" href=/categories/>Discover <i class="fa fa-compass" aria-hidden="true"></i></a>
             </li>
             @if (!(Auth::guest()))
             <li class="nav-item active">
-                <a class="nav-link" onclick="window.location='{{ URL::route('upload') }}'">Saved <i class="fa fa-bookmark-o" aria-hidden="true"></i></a>
+                <a class="nav-link"  href=/saved/>Saved <i class="fa fa-bookmark-o" aria-hidden="true"></i></a>
             </li>
             @endif
             <li class="nav-item active">
                 @if (Auth::guest())
                 <a class="nav-link disabled" href="#">Upload <i class="fa fa-cloud-upload align-middle" aria-hidden="true"></i></a>
                 @else
-                <a class="nav-link" onclick="window.location='{{ URL::route('upload') }}'">Upload <i class="fa fa-cloud-upload align-middle" aria-hidden="true" ></i></a>
+                <a class="nav-link"  href=/upload/>Upload <i class="fa fa-cloud-upload align-middle" aria-hidden="true" ></i></a>
 
 
                 @endif
@@ -49,6 +49,7 @@
                             <a class="dropdown-item" href="#">Points <span id="pointsspan" class="badge badge-pill badge-success"></span></a>
                             <a class="dropdown-item" href="#">Help</a>
                             <div class="dropdown-divider"></div>
+                       {{--     <a class="dropdown-item" href="{{ route('logout') }}" onclick="window.location='{{ route('logout') }}'">Log out</a>--}}
                             <a class="dropdown-item" href="#" onclick="window.location='{{ route('logout') }}'">Log out</a>
                             {{--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}

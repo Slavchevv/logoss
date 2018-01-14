@@ -96,7 +96,11 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $upload = Upload::where('id',$id)->get();
+      //  dd($upload[0]['attributes']['name']);
+
+        return view('edit-record')->with('upload',$upload);
     }
 
     /**
@@ -108,6 +112,7 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id, $status)
     {
+       // dd($id.'  '.$status);
         $upload = Upload::find($id);
         $upload->status = $status;
         $upload->save();

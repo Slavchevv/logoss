@@ -150,6 +150,7 @@ class UploadController extends Controller
     public function destroy($id)
     {
         $upload = Upload::find($id);
+        //dd($upload);
         $upload->delete();
         return redirect('/uploads');
         return view('edit')->with('upload',$upload);
@@ -233,7 +234,25 @@ class UploadController extends Controller
         DB::insert('insert into upload_user (upload_id,user_id,type) values (?, ?,?)', [$upload_id,$user_id,0]);*/
 
 
+        //return redirect('home');
+        return redirect()->action(
+            'UploadController@uploads', ['id' => $id]
+        );
+    }
 
+    public function saved()
+    {
+
+        $user_id = Auth::id();
+        $uploads = DB::select('SELECT u.id, u.name, a.name as aname from uploads as u inner join upload_user as uu on u.id = uu.upload_id inner join avtors as a on a.id=u.avtor_id WHERE uu.user_id='.$user_id);
+        //dd($uploads);
+   /*     SELECT u.id, u.name, a.name from uploads as u
+inner join upload_user as uu on u.id = uu.upload_id
+inner join avtors as a on a.id=u.avtor_id
+WHERE uu.user_id=1*/
+
+        //return view('saved');
+          return view('saved')->with('uploads',$uploads);
     }
     public function save_favorite(Request $request, $id)
     {

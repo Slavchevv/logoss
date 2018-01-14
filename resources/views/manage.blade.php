@@ -43,18 +43,35 @@
 
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Filter
+                                Actions
                             </button>
 
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 {!! Form::open(['action'=>['AdminController@update',$upload->id,0], 'method'=>'POST']) !!}
                                 {{Form::hidden('_method','PUT')}}
-                                <a class="dropdown-item" href="/manage">Approve</a>
+                                <a class="dropdown-item actiondrop" href="/manage">Approve</a>
                                 {!! Form::close()!!}
+
                                 {!! Form::open(['action'=>['AdminController@update',$upload->id,1], 'method'=>'POST']) !!}
                                 {{Form::hidden('_method','PUT')}}
-                                <a class="dropdown-item" href="/manage">Reject</a>
+                                <a class="dropdown-item actiondrop" href="/manage">Reject</a>
                                 {!! Form::close()!!}
+                                <div class="dropdown-divider"></div>
+
+                                {!! Form::open(['action'=>['UploadController@destroy',$upload->id], 'method'=>'DELETE']) !!}
+                                {{Form::hidden('_method','DELETE')}}
+                                <a class="dropdown-item actiondrop" href="/manage/">Delete</a>
+                                {!! Form::close()!!}
+
+                                <a class="dropdown-item actiondropedit" href="/edit-record/{{$upload->id}}">Edit</a>
+
+
+
+                               {{--
+                                {!! Form::open(['action'=>['UploadController@update',$upload->id], 'method'=>'POST']) !!}
+                                {{Form::hidden('_method','PUT')}}
+                                <a class="dropdown-item" href="/manage">Edit</a>
+                                {!! Form::close()!!}--}}
                             </div>
                         </div>
 

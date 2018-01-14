@@ -31,7 +31,7 @@ class MessagesController extends Controller
     public function update_points(){
         $user_id = Auth::id();
         $points = Points::where('user_id',$user_id)->get();
-       // dd($points[0]['attributes']['points']);
+        //dd($points[0]['attributes']['points']);
         return $points[0]['attributes']['points'];
     }
     //
