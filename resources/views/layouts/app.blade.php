@@ -145,11 +145,12 @@
 </script>
 </body>
 
+@unless (Route::currentRouteName() === 'savedview')
+    @include('inc.ftr')
+@endunless
 
-<footer class = "footer2">
+    {{--@include('inc.ftr')--}}
 
-    {{--@include('inc.footer')--}}
 
-</footer>
 
 </html>

@@ -64,7 +64,7 @@ Route::put('/admin/{admin}/{status}','AdminController@update');
 Route::get('/update-points', 'MessagesController@update_points');
 /*Route::get('/download/{link}','HomeController@download');*/
 Route::get('/download','HomeController@download')->name('download');
-Route::get('/saved', 'UploadController@saved');
+Route::get('/saved', 'UploadController@saved')->name('savedview');
 //Route::get('/save-book','UploadController@save_book')->name('savebk');
 //Route::get('autocomplete', array('as'=>'autocomplete', 'uses'=>'HomeController@autocomplete'));
 //DELETE	/photos/{photo}	destroy	photos.destroy

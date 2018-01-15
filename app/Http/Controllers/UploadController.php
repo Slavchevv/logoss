@@ -108,16 +108,17 @@ class UploadController extends Controller
     }
     public function update(Request $request, $id)
     {
+       // dd($id);
         //$upload = Upload::find($id);
         //return view('show')->with('upload',$upload);
-        $this->validate($request, [
+      //  $this->validate($request, [
           /* 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',*/
             /*'text' => 'required|max:2048',*/
-            'title'=> 'required',
-            'author'=> 'required',
-            'description'=> 'required',
+        //    'title'=> 'required',
+          //  'author'=> 'required',
+            //'description'=> 'required',
 
-        ]);
+        //]);
 
 
 
@@ -234,10 +235,10 @@ class UploadController extends Controller
         DB::insert('insert into upload_user (upload_id,user_id,type) values (?, ?,?)', [$upload_id,$user_id,0]);*/
 
 
-        //return redirect('home');
-        return redirect()->action(
+        return redirect('saved');
+     /*   return redirect()->action(
             'UploadController@uploads', ['id' => $id]
-        );
+        );*/
     }
 
     public function saved()

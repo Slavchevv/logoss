@@ -26,9 +26,9 @@
                   <div class="row">
                      <span id="this-book-download"> Download! </span>
                {{--       <a href="/download/{{url($uploads[0]->txtURL)}}" download="download">Download</a>--}}
-                      <a href="{{ route('download') }}?url={{ urlencode($uploads[0]->txtURL).'&'.'id='.$uploads[0]->id}}">Download</a>
+                      <a class ="btn" id="dnld" href="{{ route('download') }}?url={{ urlencode($uploads[0]->txtURL).'&'.'id='.$uploads[0]->id}}"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></a>
               {{--        <a href="/download/{{url($uploads[0]->txtURL)}}">Download</a>--}}
-                     <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                     {{---}}
                   </div>
                   <div class="row">
                      <span id="this-book-categories"> In categories: </span>
@@ -63,6 +63,7 @@
                <div class="col-md-6 col-lg-6 image">
                   <h2 id="book-title">{{$uploads[0]->name}}</h2><p>by <a class = "orangelink" href="/avtors/{{$author->id}}">{{$author->name}}</a></p>
         {{--          <h3><a href="/uploads/{{$upload->id}}">{{$upload->name}}</a> </h3>--}}
+                   <div class="block_1 hline-bottom"></div>
                   <div id="book-desc">{{$uploads[0]->description}}</div>
                   </div>
                <div class="col-md-3 col-lg-3 image">
